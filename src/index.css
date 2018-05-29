@@ -1,0 +1,36 @@
+.section {
+    font-weight: bold;
+    padding: 10px 0;
+}
+.list-container {
+    margin: 15px 0;
+}
+.buttons-container button {
+    margin-right: 10px;
+}
+.question-item-list {
+    width: 100%;
+    border: 1px solid #CCC;
+    padding: 20px;
+    display: block;
+    text-decoration: none;
+}
+.question-item-list:hover {
+    text-decoration: none;
+}
+.choice-box {
+    margin: 20px 5px;
+    border: 2px solid #999;
+    padding: 5px 0 20px;
+}
+.box-highlight {
+    background: #9F3;
+}
+.box-insert-choice {
+    margin: 5px;
+    width: 95%;
+    height: 100px;
+    font-size: 16px;
+    padding: 3px;
+    border: 1px dotted #666;
+}
