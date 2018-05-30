@@ -1,4 +1,4 @@
-import {RECEIVE_QUESTIONS, SAVE_ANSWER, ADD_QUESTION} from '../actions/questions'
+import {RECEIVE_QUESTIONS, SAVE_ANSWER, ADD_QUESTION, VOTE_QUESTION} from '../actions/questions'
 
 export default function questions (state = {}, action) {
     switch (action.type) {
@@ -23,6 +23,18 @@ export default function questions (state = {}, action) {
                     likes: action.hasLiked === true
                         ? state[action.id].likes.filter((uid) => uid !== action.authedUser)
                         : state[action.id].likes.concat([action.authedUser])
+                }
+            }
+
+        case VOTE_QUESTION:
+            return {
+                ...state,
+                [action.qid]: {
+                    ...state[action.qid],
+                    [action.option]: {
+                        ...state[action.qid][action.option],
+                        votes: state[action.qid][action.option].votes.concat([action.authedUser])
+                    }
                 }
             }
         

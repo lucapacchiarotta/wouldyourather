@@ -60,7 +60,8 @@ class Login extends Component {
                             <div className="login-box center">
                                 <div>
                                     <select  
-                                        ref={(input) => this.userId = input}>
+                                        ref={(input) => this.userId = input}
+                                        className="form-control">
                                         <option value="0">Select user</option>
                                         {Object.keys(users).map((id) => (
                                             <option key={id} value={id}>{users[id].name}</option>
@@ -68,7 +69,7 @@ class Login extends Component {
                                     </select>
                                 </div>
                                 <button
-                                    className="btn"
+                                    className="btn btn-primary"
                                     type="submit">
                                     Login
                                 </button>

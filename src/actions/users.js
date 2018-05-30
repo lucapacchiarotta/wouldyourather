@@ -19,8 +19,13 @@ export function addUserQuestion(authedUser, qid) {
     }
 }
 
-export function addUserAnswer() {
-    
+export function addUserAnswer(authedUser, qid, choice) {
+    return {
+        type: ADD_USER_ANSWER,
+        authedUser,
+        qid,
+        choice
+    }
 }
 
 export function handleAddUserQuestion(authedUser, qid, cb = () => {}) {
@@ -29,3 +34,9 @@ export function handleAddUserQuestion(authedUser, qid, cb = () => {}) {
     }
 }
 
+export function handleAddUserAnswer(question_id, choice, cb = () => {}) {
+    return (dispatch, getState) => {
+        const {authedUser} = getState()
+        return dispatch(addUserAnswer(authedUser, question_id, choice, cb()))
+    }
+}

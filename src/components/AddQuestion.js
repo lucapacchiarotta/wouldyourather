@@ -83,9 +83,8 @@ class AddQuestion extends Component {
                         <div className="col">
                             <form onSubmit={this.handleSubmit} >
                                 <div className="section">ADD new question</div>
-                                <div className="jumbotron text-center">
+                                <div className="text-center">
                                     <div className="h1">Would You Rather?</div>
-
                                     <div className="row">
                                         <div className="col h4 choice-box rounded" id="box-choice-1">
                                             <div className="font-weight-bold">A</div>

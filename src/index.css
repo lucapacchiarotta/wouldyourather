@@ -11,12 +11,13 @@
 .question-item-list {
     width: 100%;
     border: 1px solid #CCC;
-    padding: 20px;
+    padding: 15px;
     display: block;
     text-decoration: none;
 }
 .question-item-list:hover {
     text-decoration: none;
+    background: #F9F9F9;
 }
 .choice-box {
     margin: 20px 5px;
@@ -33,4 +34,41 @@
     font-size: 16px;
     padding: 3px;
     border: 1px dotted #666;
+}
+.leaderboard-item-list {
+    border: 1px solid #CCC;
+    padding: 10px 0;
+}
+.leaderboard-item-list:hover {
+    background: #F9F9F9;
+}
+.dashboard-item-list {
+    color: #000;
+}
+.dashboard-item-list .title {
+    font-weight: bold;
+    font-size: 1.2em;
+    border-bottom: 1px solid #999;
+    margin-bottom: 12px;
+}
+.dashboard-item-list .text {
+    color: #191919;
+    font-size: 1.1em;
+}
+.dashboard-item-list .text-small {
+    color: #666;
+    font-size: 0.9em;
+    padding-top: 5px;
+}
+.leaderboard-item-list .author {
+    font-weight: bold;
+    font-size: 1.4em;
+    border-bottom: 1px solid #999;
+    margin-bottom: 12px;
+}
+.leaderboard-item-list .text {
+    font-size: 1.1em;
+}
+.login-box select {
+    margin-bottom: 10px;
 }

@@ -15,7 +15,6 @@ class Dashboard extends Component {
     }
 
     handleView = (e, whatToShow) => {
-        //e.preventDefault()
         const {unansweredClasses, answeredClasses} = this.state
 
         unansweredClasses.pop()
@@ -66,11 +65,12 @@ class Dashboard extends Component {
                                         {((voted && this.state.showAnswered) || (!voted  && !this.state.showAnswered)) && 
                                             <Link to={`/questions/${id}`} className='question-item-list rounded'>
                                                 {((voted && this.state.showAnswered) || (!voted  && !this.state.showAnswered)) && 
-                                                    <div>  
-                                                        <b>Would You Rather?</b> <br />
-                                                        Author: {questions[id].author}<br />
-                                                        Option A: {questions[id].optionOne.text}<br />
-                                                        Option B: {questions[id].optionTwo.text}<br />
+                                                    <div className="dashboard-item-list">  
+                                                        <div className="title">Would You Rather?</div>
+                                                        <div className="text">Author: {questions[id].author}</div>
+                                                        <div className="text">Option A: {questions[id].optionOne.text}</div>
+                                                        <div className="text">Option B: {questions[id].optionTwo.text}</div>
+                                                        <div className="text-small">Click to choose your answer</div>
                                                     </div>
                                                 }
                                             </Link>
