@@ -16,14 +16,10 @@ class Question extends Component {
         const qid = question_id
 
         e.preventDefault()
-        //console.log("Choice: " + choice)
         const btn1 = document.getElementById('btn-choice-1');
         const btn2 = document.getElementById('btn-choice-2');
         btn1.className = 'invisible'
         btn2.className = 'invisible'
-
-        //const highlight = 'box-choice-' + choice
-        //document.getElementById(highlight).className = 'box-highlight'
 
         dispatch(handleVoteQuestion(
             question_id,
@@ -41,7 +37,33 @@ class Question extends Component {
 
     render() {
 
-        const {authedUser, question, users, isAnsweredByCurrent} = this.props
+        const {authedUser, users, questions, question_id} = this.props
+        let itemFound = true
+        if (!Object.keys(questions).includes(question_id)) {
+            itemFound = false
+
+            return (
+                <div className="container">
+                    <div className="row">
+                        <div className="col text-center">
+                            {authedUser === 0 
+                            ?   
+                            <div className="col">
+                                You need to be logged! 
+                                <Login />
+                            </div>
+                            :
+                            <div className="h4">404: Page not found</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
+        const question = questions[question_id]
+        const isAnsweredByCurrent = question.optionOne.votes.includes(authedUser) || question.optionTwo.votes.includes(authedUser)
+
         let classesBoxOptOne = ['col h3 choice-box rounded']
         let classesBoxOptTwo = ['col h3 choice-box rounded']
         const totalVotes = question.optionOne.votes.length + question.optionTwo.votes.length
@@ -115,13 +137,12 @@ class Question extends Component {
 
 function mapStateToProps ({authedUser, users, questions}, props) {
     const {question_id} = props.match.params
-    const question = questions[question_id]
+    
     return {
         authedUser,
         users,
-        question,
-        question_id,
-        isAnsweredByCurrent: question.optionOne.votes.includes(authedUser) || question.optionTwo.votes.includes(authedUser)
+        questions,
+        question_id
     }
 }
 
