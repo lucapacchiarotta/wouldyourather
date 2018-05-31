@@ -5,7 +5,6 @@ export const SAVE_ANSWER = 'SAVE_ANSWER'
 export const ADD_QUESTION = 'ADD_QUESTION'
 export const VOTE_QUESTION = 'VOTE_QUESTION'
 
-
 export function receiveQuestions(questions) {
     return {
         type: RECEIVE_QUESTIONS,

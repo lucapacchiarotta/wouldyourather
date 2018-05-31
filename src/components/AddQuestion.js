@@ -33,7 +33,6 @@ class AddQuestion extends Component {
             this.setState({
                 boxClasses
             })
-
             return false;
         } else {
             const question = {
@@ -57,13 +56,11 @@ class AddQuestion extends Component {
                     })
                 }
             ))
-
             return true
         }
     }
 
     render() {
-
         const {authedUser} = this.props
 
         if (this.state.redirectToHome === true) {
@@ -124,4 +121,3 @@ function mapStateToProps ({authedUser}) {
 }
 
 export default connect(mapStateToProps)(AddQuestion)
-

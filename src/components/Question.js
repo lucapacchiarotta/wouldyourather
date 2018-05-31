@@ -81,7 +81,7 @@ class Question extends Component {
                                         <div className="font-weight-bold">B</div>
                                         <div className="h4">{question.optionTwo.text}</div>
                                         <div className="h5"><span className="badge badge-light">{question.optionTwo.votes.length}</span> votes received</div>
-                                        <div className="h5"><span className="badge badge-light">{(question.optionTwo.votes.length *100 / totalVotes).toFixed(2)} %</span> votes received</div>
+                                        <div className="h5"><span className="badge badge-light">{(question.optionTwo.votes.length * 100 / totalVotes).toFixed(2)} %</span> votes received</div>
                                     </div>
                                 </div>
                             </div>

@@ -5,7 +5,6 @@ import Login from './Login'
 class Leaderboard extends Component {
 
     render() {
-
         const {authedUser, users} = this.props
 
         let usersOrdered = Object.keys(users)
@@ -51,12 +50,10 @@ class Leaderboard extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    
                                 )
                             })}
                         </div>
                     }
-
                 </div>
             </div>
         )
@@ -71,4 +68,3 @@ function mapStateToProps ({authedUser, users}) {
 }
 
 export default connect(mapStateToProps)(Leaderboard)
-

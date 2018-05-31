@@ -22,7 +22,6 @@ class Login extends Component {
             this.setState({
                 boxClasses
             })
-            
             return false
         } else {
             dispatch(setAuthedUser(this.userId.value))
@@ -30,7 +29,6 @@ class Login extends Component {
             this.setState({
                 logged: true
             })
-
             return true
         }
     }
@@ -92,4 +90,3 @@ function mapStateToProps ({users}) {
 }
 
 export default connect(mapStateToProps)(Login)
-

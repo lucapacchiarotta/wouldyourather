@@ -22,4 +22,3 @@ function mapStateToProps ({authedUser}) {
 }
 
 export default connect(mapStateToProps)(Logout)
-

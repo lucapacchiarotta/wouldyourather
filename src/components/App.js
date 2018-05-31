@@ -25,20 +25,21 @@ class App extends Component {
             <BrowserRouter>
                 <Fragment>
                     {this.props.loading === true
-                            ? <div>
-                                <LoadingBar />
-                                App is loading data.. please wait
-                            </div>
-                            :
-                    <div className='container'>
-                        <Nav />
-                        <Route path='/' exact component={Dashboard} />
-                        <Route path='/add' exact component={AddQuestion} />
-                        <Route path='/login' exact component={Login} />
-                        <Route path='/leaderboard' exact component={Leaderboard} />
-                        <Route path='/questions/:question_id' exact component={Question} />
-                        <Route path='/logout' exact component={Logout} />
-                    </div>
+                        ? 
+                        <div>
+                            <LoadingBar />
+                            App is loading data.. please wait
+                        </div>
+                        :
+                        <div className='container'>
+                            <Nav />
+                            <Route path='/' exact component={Dashboard} />
+                            <Route path='/add' exact component={AddQuestion} />
+                            <Route path='/login' exact component={Login} />
+                            <Route path='/leaderboard' exact component={Leaderboard} />
+                            <Route path='/questions/:question_id' exact component={Question} />
+                            <Route path='/logout' exact component={Logout} />
+                        </div>
                     }
                 </Fragment>
             </BrowserRouter>

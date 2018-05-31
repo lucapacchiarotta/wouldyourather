@@ -59,7 +59,6 @@ class Dashboard extends Component {
                             {questionsIdOrdered.map((id) => {
                                 const voted = questions[id].optionOne.votes.includes(authedUser) || questions[id].optionTwo.votes.includes(authedUser)
 
-                                
                                 return (
                                     <div className="list-container" key={id}>
                                         {((voted && this.state.showAnswered) || (!voted  && !this.state.showAnswered)) && 
@@ -76,14 +75,10 @@ class Dashboard extends Component {
                                             </Link>
                                         }
                                     </div>
-                                    
                                 )
                             })}
-
-                            
                         </div>
                     }
-
                 </div>
             </div>
         )
@@ -101,4 +96,3 @@ function mapStateToProps ({authedUser, users, questions}) {
 }
 
 export default connect(mapStateToProps)(Dashboard)
-
