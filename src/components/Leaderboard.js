@@ -41,7 +41,7 @@ class Leaderboard extends Component {
                                     <div className="list-container" key={item.id}>
                                         <div className="row leaderboard-item-list rounded">
                                             <div className="col-2">
-                                                <img src={item.avatarURL} className="img-thumbnail" />
+                                                <img src={item.avatarURL} className="img-thumbnail" alt="Avatar" />
                                             </div>
                                             <div className="col-10">
                                                 <div className="author">{item.name}</div>

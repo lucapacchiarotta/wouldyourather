@@ -14,13 +14,10 @@ class Nav extends Component {
                     <NavLink className='navbar-brand' to='/' exact>
                         Home
                     </NavLink>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
+                    <div className="navbar-collapse" id="navbarNav">
                             {authedUser !== 0
                                 ? 
-                                <ul className="navbar-nav">
+                                <ul className="navbar-nav mr-auto">
                                     <li className="nav-item active">
                                         <NavLink className='nav-link' to='/add' exact>
                                             Add
@@ -38,7 +35,7 @@ class Nav extends Component {
                                     </li>
                                 </ul>
                                 :
-                                <ul className="navbar-nav">
+                                <ul className="navbar-nav mr-auto">
                                     <li className="nav-item">
                                         <NavLink className='nav-link' to='/login' exact>
                                             Login

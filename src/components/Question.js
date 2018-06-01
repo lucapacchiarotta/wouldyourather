@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import Login from './Login'
-import {Link} from 'react-router-dom'
-import {showLoading,hideLoading} from "react-redux-loading"
 import {handleVoteQuestion} from '../actions/questions'
 import {handleAddUserAnswer} from '../actions/users'
 
@@ -13,7 +11,6 @@ class Question extends Component {
 
     vote(e, choice) {
         const {dispatch, question_id} = this.props
-        const qid = question_id
 
         e.preventDefault()
         const btn1 = document.getElementById('btn-choice-1');
@@ -38,10 +35,8 @@ class Question extends Component {
     render() {
 
         const {authedUser, users, questions, question_id} = this.props
-        let itemFound = true
-        if (!Object.keys(questions).includes(question_id)) {
-            itemFound = false
 
+        if (!Object.keys(questions).includes(question_id)) {
             return (
                 <div className="container">
                     <div className="row">
@@ -111,17 +106,17 @@ class Question extends Component {
                             :
                             <div className="text-center">
                                 <div className="h1">Would You Rather?</div>
-                                <div><img src={users[question.author].avatarURL} className="img-thumbnail" /></div>
+                                <div><img src={users[question.author].avatarURL} className="img-thumbnail" alt="Avatar" /></div>
                                 <div className="row">
                                     <div className="col h3 choice-box rounded" id="box-choice-optionOne">
                                         <div className="font-weight-bold">A</div>
                                         <div className="h4">{question.optionOne.text}</div>
-                                        <button className="btn btn-success" onClick={(e) => this.vote(e, OPTION_A)} id="btn-choice-1">Select this</button>
+                                        <button className="btn btn-success" onClick={(e) => this.vote(e, OPTION_A)} id="btn-choice-1">Vote</button>
                                     </div>
                                     <div className="col h3 choice-box rounded" id="box-choice-optionTwo">
                                         <div className="font-weight-bold">B</div>
                                         <div className="h4">{question.optionTwo.text}</div>
-                                        <button className="btn btn-success" onClick={(e) => this.vote(e, OPTION_B)}  id="btn-choice-2">Select this</button>
+                                        <button className="btn btn-success" onClick={(e) => this.vote(e, OPTION_B)}  id="btn-choice-2">Vote</button>
                                     </div>
                                 </div>
                             </div>
